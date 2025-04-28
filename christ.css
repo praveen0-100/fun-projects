@@ -1,0 +1,117 @@
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body
+{
+    min-height:100vh;
+    overflow:hidden;
+    background: linear-gradient(#ff0040,#ff0040);
+
+}
+h1{
+text-align: center;
+font-size: 50px;
+font-style: italic;
+color:white;
+}
+.container{
+bottom: 0;
+position:fixed;
+left: 0;
+right: 20px;
+height: 250px;
+text-align: center;
+
+}
+.snow-container
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+.snow-container .snowFlake
+{
+    position: absolute;
+    color: #fff;
+    font-size: 1em;
+    animation: fall linear forwards;
+}
+@keyframes fall
+{
+    0%
+    {
+        transform:translateY(-100px);
+        opacity:0;
+    }
+    10%,70%
+    {
+        opacity:1;
+    }
+    100%
+    {
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+.snow-container::before
+{
+    content:'';
+    position:absolute;
+    background-image: url("image web/tree shad1.png");
+    background-size: 650px;
+    bottom:0;
+    width:100%;
+    height: 200px;
+    object-fit:cover;
+
+}
+.circle
+{
+    position: absolute;
+    top:10%;
+    left: 50%;
+    transform:translateX(-50%);
+    width:350px;
+    height:350px;
+    background: #fff;
+    border-radius: 50%;
+}
+.circle::before
+{
+content:'';
+position: absolute;
+inset:-200px -300px;
+float: left;
+opacity: 100%;
+background-image: url("image web/santa shad.png");
+background-size: 600px;
+background-repeat:no-repeat;
+background-position:center;
+animation:animateSanta 5s ease-in-out infinite;
+}
+@keyframes animateSanta
+{
+0%
+{
+    transform:translateY(-25px);
+}
+50%
+{
+    transform:translateY(25px);
+}
+}
+.bottom-image
+{
+    position: fixed;
+    bottom:0;
+    height:350px;
+    
+    
+}
