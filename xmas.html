@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNOWFALL</title>
+    <link rel="stylesheet" href="christ.css">
+</head>
+<body>
+    <h1 class="">HAPPY X-MAS</h1>
+    <div class="snow-container">
+        </p>
+        <div class="circle">
+        </div>
+        <h1 class="container">
+            <p>TO </p>
+            <p>
+            EVERYONE</p>
+        </h1>
+    <script>
+        let snowContainer= document.querySelector('.snow-container');
+        function createSnowFlake(){
+            let snowFlake = document.createElement('div');
+            snowFlake.classList.add('snowFlake');
+            snowFlake.textContent='*';
+            snowFlake.style.left =`${Math.random() * 100}vw`;
+            snowFlake.style.fontSize=`${Math.random() * 12 + 10}
+             px`;
+            snowFlake.style.opacity = Math.random();
+            snowFlake.style.animationDuration = `${Math.random()
+             * 3 + 2}s`;
+            snowContainer.appendChild(snowFlake);
+            setTimeout(() => {
+                snowFlake.remove();
+            },5000);
+        }
+        setInterval(createSnowFlake,50);
+    </script>
+</body>
+</html>
